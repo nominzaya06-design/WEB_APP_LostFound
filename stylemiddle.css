@@ -1,0 +1,125 @@
+.SearchType {
+  display: flex;
+  flex: 1;
+  min-width: 150px;
+  flex-direction: column;
+}
+
+.Main-body {
+  width: min(90%, 1200px);
+  margin: var(--space-4) auto 0;
+}
+
+.AdvancedFilters {
+  padding: var(--space-4);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  background-color: var(--color-white-0);
+}
+
+.AdvancedFilterTitle {
+  margin-bottom: var(--space-3);
+}
+
+.AdvancedFilterTitle label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-black-1);
+}
+
+.AdvancedFilterHeader {
+  margin-bottom: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-black-2);
+}
+
+#filterToggle {
+  display: none;
+}
+
+#filtherImg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.AdvencedSearchOptions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.FilterButton {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background-color: var(--color-white-1);
+  color: var(--color-black-2);
+  font-size: 0.78rem;
+}
+
+.FilterButton:focus {
+  outline: none;
+  border-color: var(--color-blue-1);
+}
+
+.footer {
+  margin-top: var(--space-6);
+  padding: var(--space-5) var(--space-4);
+  border-top: 1px solid var(--color-line);
+  background-color: var(--color-white-0);
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-5);
+  width: min(90%, 1200px);
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  margin-bottom: var(--space-2);
+  font-size: 1rem;
+  color: var(--color-blue-2);
+}
+
+.footer-column p,
+.footer-bottom {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-black-3);
+}
+
+.footer-bottom {
+  width: min(90%, 1200px);
+  margin: var(--space-4) auto 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-line);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .AdvencedSearchOptions {
+    flex-wrap: wrap;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .footer-column,
+  .footer-bottom {
+    text-align: center;
+  }
+}

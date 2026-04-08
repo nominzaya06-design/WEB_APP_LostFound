@@ -1,0 +1,205 @@
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-page {
+  width: min(90%, 1100px);
+  margin: 2rem auto 3rem;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 20rem minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  background: var(--color-white-0);
+  animation: fadeUp 0.4s ease both;
+}
+
+.profile-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 1.6rem;
+  font-weight: 700;
+  box-shadow: 0 0 0 2px var(--color-line);
+}
+
+.profile-avatar::after {
+  content: "";
+  position: absolute;
+  right: 0.2rem;
+  bottom: 0.2rem;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 2px solid var(--color-white-0);
+  border-radius: 50%;
+  background: hsl(142, 71%, 45%);
+}
+
+.profile-name {
+  font-size: 1.1rem;
+}
+
+.profile-badge,
+.reports-count {
+  border-radius: var(--radius-3);
+  font-weight: 700;
+}
+
+.profile-badge {
+  padding: 0.3rem 0.7rem;
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 0.72rem;
+}
+
+.profile-info {
+  width: 100%;
+  display: grid;
+  gap: 0.7rem;
+  padding: 0.95rem 1.05rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background: var(--color-white-1);
+}
+
+.info-row dt {
+  margin-bottom: 0.15rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-black-3);
+}
+
+.info-row dd {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.profile-actions {
+  width: 100%;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.profile-secondary,
+.reports-header {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.profile-secondary > a {
+  flex: 1;
+}
+
+.btn-admin,
+.btn-settings,
+.btn-logout,
+.btn-new-report {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0 0.9rem;
+  border-radius: var(--radius-1);
+  font-size: 0.78rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-admin,
+.btn-new-report {
+  background: var(--color-blue-1);
+  color: var(--color-white-0);
+}
+
+.btn-admin:hover,
+.btn-new-report:hover {
+  background: var(--color-blue-2);
+}
+
+.btn-settings {
+  border: 1px solid var(--color-line);
+  color: var(--color-black-2);
+  background: transparent;
+}
+
+.btn-settings:hover {
+  background: var(--color-white-1);
+}
+
+.btn-logout {
+  border: 1px solid #f3c3c3;
+  color: #ef4444;
+  background: transparent;
+}
+
+.btn-logout:hover {
+  background: #fff0f0;
+}
+
+.reports-section {
+  animation: fadeUp 0.4s 0.1s ease both;
+}
+
+.reports-header {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.reports-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.reports-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: var(--color-blue-3);
+  color: var(--color-blue-2);
+  font-size: 0.72rem;
+}
+
+.profile-report {
+  max-width: 22rem;
+}
+
+@media (max-width: 768px) {
+  .profile-page {
+    width: 92%;
+    margin-bottom: 5rem;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .reports-header {
+    flex-wrap: wrap;
+  }
+}

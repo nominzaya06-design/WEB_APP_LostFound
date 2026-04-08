@@ -1,0 +1,173 @@
+@import url("homepage-base.css");
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.site-main,
+.page-width {
+  width: min(90%, 1200px);
+  margin-inline: auto;
+}
+
+.site-main {
+  padding: 1.8rem 0 5rem;
+}
+
+.surface {
+  background-color: var(--color-white-0);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-2);
+  box-shadow: 0 0.5rem 1.5rem var(--color-shadow);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-1);
+  background-color: var(--color-white-0);
+  color: var(--color-black-2);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-black-3);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-blue-1);
+}
+
+textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.2rem;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--color-black-3) 50%),
+    linear-gradient(135deg, var(--color-black-3) 50%, transparent 50%);
+  background-position:
+    calc(100% - 1rem) calc(50% - 0.1rem),
+    calc(100% - 0.7rem) calc(50% - 0.1rem);
+  background-size: 0.35rem 0.35rem;
+  background-repeat: no-repeat;
+}
+
+.btn-solid,
+.btn-outline,
+.btn-soft {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.7rem;
+  padding: 0 1rem;
+  border-radius: var(--radius-1);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-solid {
+  background-color: var(--color-blue-1);
+  color: var(--color-white-0);
+}
+
+.btn-solid:hover {
+  background-color: var(--color-blue-2);
+}
+
+.btn-outline {
+  border: 1px solid var(--color-blue-1);
+  color: var(--color-blue-1);
+  background-color: var(--color-white-0);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-blue-3);
+}
+
+.btn-soft {
+  border: 1px solid var(--color-line);
+  color: var(--color-black-3);
+  background-color: var(--color-white-1);
+}
+
+.btn-soft:hover {
+  border-color: var(--color-black-3);
+  color: var(--color-black-2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-3);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.badge.found {
+  background-color: #e6f6ed;
+  color: #41b06e;
+}
+
+.badge.lost {
+  background-color: #fdeceb;
+  color: #e65c52;
+}
+
+@media (max-width: 768px) {
+  .site-main {
+    padding-top: 1.2rem;
+  }
+}
+
+
+.nav-search input {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  min-width: 0;
+}
+
+.nav-search input:focus {
+  border-color: transparent;
+}
