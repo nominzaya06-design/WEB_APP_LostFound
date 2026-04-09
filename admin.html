@@ -2,199 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  <title>Admin - Campus Lost & Found</title>
-  <link rel="stylesheet" href="style-admin,details,found.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Lost &amp; Found</title>
+  <link rel="stylesheet" href="homepage-base.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="admin.css">
-
- 
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container nav-container flex items-center justify-between">
-      <div class="flex items-center gap-6">
-        <a href="homepage.html" class="logo-area">
-          <img src="images/num-logo.jpg" alt="NUM Logo" class="logo-img" onerror="this.src='images/num-logo.jpg'">
-          <div class="logo-text">
-            <span class="logo-title">Lost&Found</span>
-            <span class="logo-subtitle">NUM / МУИС</span>
-          </div>
-        </a>
-        
-        <div class="nav-links">
-          <a href="homepage.html" class="nav-link">Home Items</a>
-          <a href="lostitems.html" class="nav-link">Lost Items</a>
-          <a href="founditems.html" class="nav-link">Found Items</a>
-        </div>
+<header>
+  <!-- ДЭЭД NAV Сайтын үндсэн navigation -->
+  <nav class="nav">
+    <div class="nav-left">
+      <img src="images/logo.png" alt="Muis logo" class="logo">
+      <div class="nav-logo-text">
+        <strong>Lost&Found</strong>
+        <small>NUM/МУИС</small>
       </div>
+    </div>
 
-      <div class="search-bar">
-        <i data-lucide="search" class="search-icon"></i>
-        <input type="search" placeholder="Search items, locations...">
-      </div>
+    <div class="nav-center">
+      <a href="homepage.html" >Home Items</a>
+      <a href="lostitems.html" >Lost Items</a>
+      <a href="founditems.html" >Found Items</a>
+    </div>
 
-      <div class="nav-actions">
-        <a href="report.html" class="btn btn-primary">Post Item</a>
-        <a href="profile.html" class="btn btn-ghost" style="border-radius: 9999px; padding: 0.5rem; border: 1px solid var(--border);">
-          <div style="width: 2rem; height: 2rem; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 600;">
-            JD
-          </div>
-        </a>
+    <div class="nav-right">
+      <div class="nav-search">
+        <svg width="20px" height="20px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 10.7655C5.50003 8.01511 7.44296 5.64777 10.1405 5.1113C12.8381 4.57483 15.539 6.01866 16.5913 8.55977C17.6437 11.1009 16.7544 14.0315 14.4674 15.5593C12.1804 17.0871 9.13257 16.7866 7.188 14.8415C6.10716 13.7604 5.49998 12.2942 5.5 10.7655Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17.029 16.5295L19.5 19.0005" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input type="text" placeholder="Search items, locations...">
       </div>
+      <a href="report.html" class="post-btn">Post Items</a>
+      <a href="login.html" class="login-btn">Login</a>
+      <a href="profile.html" class="profile-btn">JD</a>
     </div>
   </nav>
+</header>
 
-  <div class="admin-layout" style="min-height: calc(100vh - 4rem);">
-    <!-- Admin Sidebar -->
-    <aside class="admin-sidebar">
-      <div class="admin-sidebar-header">
-        <h2 class="admin-sidebar-title">
-          <i data-lucide="shield-check" style="margin-right: 0.5rem; width: 1.25rem; height: 1.25rem;"></i>
-          Admin Panel
-        </h2>
-      </div>
-      <nav class="admin-nav">
-        <button class="admin-nav-item" onclick="switchTab('dashboard')" id="tab-btn-dashboard">
-          <i data-lucide="layout-dashboard"></i> Dashboard
-        </button>
-        <button class="admin-nav-item active" onclick="switchTab('posts')" id="tab-btn-posts">
-          <i data-lucide="package"></i> Manage Posts
-        </button>
-        <button class="admin-nav-item" onclick="switchTab('users')" id="tab-btn-users">
-          <i data-lucide="users"></i> Manage Users
-        </button>
-        <a href="homepage.html" class="admin-nav-item" style="margin-top: 1rem; border-top: 1px solid var(--border); border-radius: 0; padding-top: 1rem;">
-          <i data-lucide="arrow-left"></i> Back to Site
-        </a>
-      </nav>
-    </aside>
+  <!-- MAIN Admin page -->
+  <main class="admin-page">
+    <div class="admin-shell">
+      <!-- SIDEBAR Admin navigation -->
+      <aside class="admin-sidebar">
+        <h1>Admin Panel</h1>
+        <nav class="admin-nav">
+          <button class="admin-tab" type="button" data-target="dashboard">Dashboard</button>
+          <button class="admin-tab is-active" type="button" data-target="posts">Manage Posts</button>
+          <button class="admin-tab" type="button" data-target="users">Manage Users</button>
+          <a class="admin-back-link" href="profile.html">Back to Profile</a>
+        </nav>
+      </aside>
 
-    <!-- Admin Content -->
-    <main class="admin-content">
-      <div class="admin-header">
-        <h1 class="admin-page-title" id="page-title">Manage Posts</h1>
-      </div>
+      <!-- CONTENT Admin үндсэн мэдээлэл -->
+      <section class="admin-main">
+        <header class="admin-header">
+          <h2 id="admin-title">Manage Posts</h2>
+        </header>
 
-      <!-- Dashboard Tab -->
-      <div id="tab-dashboard" class="tab-content">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-          <div class="admin-card" style="padding: 1.5rem;">
-            <h3 style="font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Total Reports</h3>
-            <div style="font-size: 2.25rem; font-weight: 700;">24</div>
-          </div>
-          <div class="admin-card" style="padding: 1.5rem;">
-            <h3 style="font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Lost Items</h3>
-            <div style="font-size: 2.25rem; font-weight: 700; color: #ef4444;">15</div>
-          </div>
-          <div class="admin-card" style="padding: 1.5rem;">
-            <h3 style="font-size: 0.875rem; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Found Items</h3>
-            <div style="font-size: 2.25rem; font-weight: 700; color: #10b981;">9</div>
+        <!-- STATS Dashboard summary -->
+        <div class="admin-panel" id="panel-dashboard">
+          <div class="admin-stats">
+            <article class="admin-stat"><small>Total Reports</small><strong>24</strong></article>
+            <article class="admin-stat"><small>Lost Items</small><strong style="color:#e65c52;">15</strong></article>
+            <article class="admin-stat"><small>Found Items</small><strong style="color:#41b06e;">9</strong></article>
           </div>
         </div>
-      </div>
 
-      <!-- Posts Tab -->
-      <div id="tab-posts" class="tab-content active">
-        <div class="admin-card">
-          <div class="admin-card-header">
-            <h2 class="admin-card-title">All Item Reports</h2>
-            <div class="admin-search-wrapper">
-              <i data-lucide="search" class="admin-search-icon"></i>
-              <input type="text" placeholder="Search posts...">
+        <!-- POSTS TABLE Админд харагдах item list -->
+        <div class="admin-panel is-active" id="panel-posts">
+          <section class="admin-card">
+            <div class="admin-card-head">
+              <h3>All Item Reports</h3>
+              <div class="admin-search"><input type="search" placeholder="Search posts..."></div>
             </div>
-          </div>
-          <div style="overflow-x: auto;">
-            <table class="admin-table">
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th>Status</th>
-                  <th>Posted By</th>
-                  <th>Date</th>
-                  <th style="text-align: right;">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div class="item-cell">
-                      <img src="images/phone.jpg" alt="iPhone" class="item-img" onerror="this.src='/images/phone.jpg'">
-                      <span class="item-title">Black iPhone 13 Pro</span>
-                    </div>
-                  </td>
-                  <td><span class="badge found" style="background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2);">Found</span></td>
-                  <td style="color: var(--text-muted);">John Doe</td>
-                  <td style="color: var(--text-muted);">Oct 24, 2023</td>
-                  <td style="text-align: right;">
-                    <button class="btn-icon success" title="Approve/Mark Resolved"><i data-lucide="check-circle"></i></button>
-                    <button class="btn-icon danger" title="Delete"><i data-lucide="trash-2"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="item-cell">
-                      <img src="images/wallet.jpg" alt="Wallet" class="item-img" onerror="this.src='/images/wallet.jpg'">
-                      <span class="item-title">Brown Leather Wallet</span>
-                    </div>
-                  </td>
-                  <td><span class="badge lost" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);">Lost</span></td>
-                  <td style="color: var(--text-muted);">Sarah Smith</td>
-                  <td style="color: var(--text-muted);">Oct 23, 2023</td>
-                  <td style="text-align: right;">
-                    <button class="btn-icon success" title="Approve/Mark Resolved"><i data-lucide="check-circle"></i></button>
-                    <button class="btn-icon danger" title="Delete"><i data-lucide="trash-2"></i></button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="item-cell">
-                      <img src="images/laptop.jpg" alt="MacBook" class="item-img" onerror="this.src='/images/laptop.jpg'">
-                      <span class="item-title">MacBook Pro 14"</span>
-                    </div>
-                  </td>
-                  <td><span class="badge lost" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);">Lost</span></td>
-                  <td style="color: var(--text-muted);">Mike Johnson</td>
-                  <td style="color: var(--text-muted);">Oct 22, 2023</td>
-                  <td style="text-align: right;">
-                    <button class="btn-icon success" title="Approve/Mark Resolved"><i data-lucide="check-circle"></i></button>
-                    <button class="btn-icon danger" title="Delete"><i data-lucide="trash-2"></i></button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr><th>Item</th><th>Status</th><th>Posted By</th><th>Date</th><th style="text-align:right;">Actions</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><div class="admin-item"><img src="images/phone.jpg" alt="iPhone"><span>Black iPhone 13 Pro</span></div></td>
+                    <td><span class="badge found">Found</span></td>
+                    <td class="admin-muted">John Doe</td>
+                    <td class="admin-muted">Oct 24, 2023</td>
+                    <td><div class="admin-actions"><button class="admin-action admin-action--approve" type="button">✓</button><button class="admin-action admin-action--delete" type="button">✕</button></div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="admin-item"><img src="images/wallet.jpg" alt="Wallet"><span>Brown Leather Wallet</span></div></td>
+                    <td><span class="badge lost">Lost</span></td>
+                    <td class="admin-muted">Sarah Smith</td>
+                    <td class="admin-muted">Oct 23, 2023</td>
+                    <td><div class="admin-actions"><button class="admin-action admin-action--approve" type="button">✓</button><button class="admin-action admin-action--delete" type="button">✕</button></div></td>
+                  </tr>
+                  <tr>
+                    <td><div class="admin-item"><img src="images/laptop.jpg" alt="Laptop"><span>MacBook Pro 14&quot;</span></div></td>
+                    <td><span class="badge lost">Lost</span></td>
+                    <td class="admin-muted">Mike Johnson</td>
+                    <td class="admin-muted">Oct 22, 2023</td>
+                    <td><div class="admin-actions"><button class="admin-action admin-action--approve" type="button">✓</button><button class="admin-action admin-action--delete" type="button">✕</button></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
         </div>
-      </div>
-      
-      <!-- Users Tab -->
-      <div id="tab-users" class="tab-content">
-        <div class="admin-card">
-          <div class="admin-card-header">
-            <h2 class="admin-card-title">Manage Users</h2>
-          </div>
-          <div style="padding: 3rem; text-align: center; color: var(--text-muted);">
-            <i data-lucide="users" style="width: 3rem; height: 3rem; margin: 0 auto 1rem; opacity: 0.5;"></i>
+
+        <!-- USERS PLACEHOLDER Хэрэглэгчийн хэсэг -->
+        <div class="admin-panel" id="panel-users">
+          <section class="admin-card admin-placeholder">
             <p>User management interface is under development.</p>
-          </div>
+          </section>
         </div>
-      </div>
-    </main>
-  </div>
-
-  <!-- Footer -->
-  <footer style="border-top: 1px solid var(--border); padding: 2rem 0; margin-top: 3rem; background-color: white;">
-    <div class="container" style="text-align: center; font-size: 0.875rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-      <p>© 2023 Campus Lost & Found. All rights reserved.</p>
-      <div style="display: flex; gap: 1.5rem;">
-        <a href="#" style="transition: color 0.2s;">About</a>
-        <a href="#" style="transition: color 0.2s;">Contact</a>
-        <a href="#" style="transition: color 0.2s;">Terms of Service</a>
-      </div>
+      </section>
     </div>
-  </footer>
+  </main>
 
+  <!-- MOBILE NAV Гар утасны доод navigation -->
+  <nav class="bottom-nav">
+    <a href="homepage.html" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24" fill="none">
+        <path d="M9 20H7C5.89543 20 5 19.1046 5 18V10.9199C5 10.336 5.25513 9.78132 5.69842 9.40136L10.6984 5.11564C11.4474 4.47366 12.5526 4.47366 13.3016 5.11564L18.3016 9.40136C18.7449 9.78132 19 10.336 19 10.9199V18C19 19.1046 18.1046 20 17 20H15M9 20V14C9 13.4477 9.44772 13 10 13H14C14.5523 13 15 13.4477 15 14V20M9 20H15" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Home</span>
+    </a>
 
+    <a href="lostitems.html" >
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C11.3953 1.25 10.8384 1.40029 10.2288 1.65242C9.64008 1.89588 8.95633 2.25471 8.1049 2.70153L6.03739 3.78651C4.99242 4.33487 4.15616 4.77371 3.51047 5.20491C2.84154 5.65164 2.32632 6.12201 1.95112 6.75918C1.57718 7.39421 1.40896 8.08184 1.32829 8.90072C1.24999 9.69558 1.24999 10.6731 1.25 11.9026V12.0974C1.24999 13.3268 1.24999 14.3044 1.32829 15.0993C1.40896 15.9182 1.57718 16.6058 1.95112 17.2408C2.32632 17.878 2.84154 18.3484 3.51047 18.7951C4.15613 19.2263 4.99233 19.6651 6.03723 20.2134L8.10486 21.2985C8.95628 21.7453 9.64008 22.1041 10.2288 22.3476C10.8384 22.5997 11.3953 22.75 12 22.75C12.6047 22.75 13.1616 22.5997 13.7712 22.3476C14.3599 22.1041 15.0437 21.7453 15.8951 21.2985L17.9626 20.2135C19.0076 19.6651 19.8438 19.2263 20.4895 18.7951C21.1585 18.3484 21.6737 17.878 22.0489 17.2408C22.4228 16.6058 22.591 15.9182 22.6717 15.0993C22.75 14.3044 22.75 13.3269 22.75 12.0975V11.9025C22.75 10.6731 22.75 9.69557 22.6717 8.90072C22.591 8.08184 22.4228 7.39421 22.0489 6.75918C21.6737 6.12201 21.1585 5.65164 20.4895 5.20491C19.8438 4.77371 19.0076 4.33487 17.9626 3.7865L15.8951 2.70154C15.0437 2.25472 14.3599 1.89589 13.7712 1.65242C13.1616 1.40029 12.6047 1.25 12 1.25Z" fill="#1C274C"/>
+      </svg>
+      <span>Lost</span>
+    </a>
+
+    <a href="founditems.html" >
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1.25C11.3953 1.25 10.8384 1.40029 10.2288 1.65242C9.64008 1.89588 8.95633 2.25471 8.1049 2.70153L6.03739 3.78651C4.99242 4.33487 4.15616 4.77371 3.51047 5.20491C2.84154 5.65164 2.32632 6.12201 1.95112 6.75918C1.57718 7.39421 1.40896 8.08184 1.32829 8.90072C1.24999 9.69558 1.24999 10.6731 1.25 11.9026V12.0974C1.24999 13.3268 1.24999 14.3044 1.32829 15.0993C1.40896 15.9182 1.57718 16.6058 1.95112 17.2408C2.32632 17.878 2.84154 18.3484 3.51047 18.7951C4.15616 19.2263 4.99241 19.6651 6.03737 20.2135L8.10481 21.2984C8.95628 21.7453 9.64006 22.1041 10.2288 22.3476C10.8384 22.5997 11.3953 22.75 12 22.75C12.6047 22.75 13.1616 22.5997 13.7712 22.3476C14.3599 22.1041 15.0437 21.7453 15.8951 21.2985L17.9626 20.2135C19.0076 19.6651 19.8438 19.2263 20.4895 18.7951C21.1585 18.3484 21.6737 17.878 22.0489 17.2408C22.4228 16.6058 22.591 15.9182 22.6717 15.0993C22.75 14.3044 22.75 13.3269 22.75 12.0975V11.9025C22.75 10.6731 22.75 9.69557 22.6717 8.90072C22.591 8.08184 22.4228 7.39421 22.0489 6.75918C21.6737 6.12201 21.1585 5.65164 20.4895 5.20491C19.8438 4.77371 19.0076 4.33487 17.9626 3.7865L15.8951 2.70154C15.0437 2.25472 14.3599 1.89589 13.7712 1.65242C13.1616 1.40029 12.6047 1.25 12 1.25Z" fill="#1C274C"/>
+      </svg>
+      <span>Found</span>
+    </a>
+
+    <a href="report.html" >
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 12H20M12 4V20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Post</span>
+    </a>
+
+    <a href="profile.html" class="mobile-active">
+      <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.4" d="M12.1605 10.87C12.0605 10.86 11.9405 10.86 11.8305 10.87C9.45055 10.79 7.56055 8.84 7.56055 6.44C7.56055 3.99 9.54055 2 12.0005 2C14.4505 2 16.4405 3.99 16.4405 6.44C16.4305 8.84 14.5405 10.79 12.1605 10.87Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M7.1607 14.56C4.7407 16.18 4.7407 18.82 7.1607 20.43C9.9107 22.27 14.4207 22.27 17.1707 20.43C19.5907 18.81 19.5907 16.17 17.1707 14.56C14.4307 12.73 9.9207 12.73 7.1607 14.56Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Profile</span>
+    </a>
+  </nav>
+
+  <script>
+    const tabs = document.querySelectorAll('.admin-tab');
+    const panels = document.querySelectorAll('.admin-panel');
+    const title = document.getElementById('admin-title');
+    const titles = { dashboard: 'Dashboard', posts: 'Manage Posts', users: 'Manage Users' };
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.target;
+        tabs.forEach((item) => item.classList.remove('is-active'));
+        panels.forEach((panel) => panel.classList.remove('is-active'));
+        tab.classList.add('is-active');
+        document.getElementById(`panel-${target}`).classList.add('is-active');
+        title.textContent = titles[target];
+      });
+    });
+  </script>
 </body>
 </html>

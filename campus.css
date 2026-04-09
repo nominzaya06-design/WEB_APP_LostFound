@@ -1,3 +1,4 @@
+/* PAGE LAYOUT Lost / Found хуудасны үндсэн бүтэц */
 .site-main {
   position: relative;
 }
@@ -9,19 +10,23 @@
   align-items: start;
 }
 
+/* CARD PADDING Sidebar, detail, form card */
 .sidebar-card,
 .contact-card,
-.form-card {
+.form-card,
+.modal-card {
   padding: 1rem;
 }
 
+/* SECTION TITLE Icon-той гарчгууд */
 .sidebar-card__title,
 .contact-card__heading,
 .back-link,
 .notice,
 .meta-list div,
 .detail-meta__item,
-.detail-note {
+.detail-note,
+.contact-row {
   display: flex;
   align-items: center;
   gap: 0.45rem;
@@ -40,15 +45,18 @@
 .meta-list svg,
 .detail-meta__item svg,
 .detail-note svg,
-.contact-card__actions svg {
+.contact-card__actions svg,
+.contact-row svg {
   width: 1rem;
   height: 1rem;
   flex: none;
   stroke: currentColor;
 }
 
+/* FORM STACK Form доторх босоо бүтэц */
 .sidebar-stack,
-.form-stack {
+.form-stack,
+.modal-stack {
   display: grid;
   gap: 0.8rem;
 }
@@ -85,6 +93,7 @@
   padding: 0;
 }
 
+/* NOTICE Message box */
 .notice {
   padding: 0.9rem 1rem;
   border-left: 0.22rem solid currentColor;
@@ -109,6 +118,7 @@
   background-color: #edf8f1;
 }
 
+/* PAGE HEADER Хуудасны title хэсэг */
 .list-heading {
   display: flex;
   align-items: center;
@@ -119,7 +129,8 @@
 
 .list-heading h1,
 .detail-title,
-.form-page h1 {
+.form-page h1,
+.modal-title {
   font-size: 1.45rem;
   line-height: 1.15;
 }
@@ -128,16 +139,19 @@
 .muted-count,
 .form-page > p,
 .back-link,
-.contact-card__eyebrow {
+.contact-card__eyebrow,
+.modal-subtitle {
   color: var(--color-black-3);
 }
 
 .list-heading span,
 .muted-count,
-.form-page > p {
+.form-page > p,
+.modal-subtitle {
   font-size: 0.84rem;
 }
 
+/* ITEM GRID Lost / Found card list */
 .item-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -184,7 +198,8 @@
 
 .item-card__text,
 .meta-list,
-.detail-copy p {
+.detail-copy p,
+.modal-copy {
   margin: 0;
   font-size: 0.86rem;
   line-height: 1.45;
@@ -203,7 +218,8 @@
 
 .card-actions,
 .contact-card__actions,
-.form-grid {
+.form-grid,
+.modal-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.6rem;
@@ -213,6 +229,7 @@
   margin-top: auto;
 }
 
+/* DETAILS PAGE Дэлгэрэнгүй хуудасны layout */
 .back-link {
   display: inline-flex;
   margin-bottom: 0.9rem;
@@ -232,7 +249,9 @@
 }
 
 .detail-panel,
-.detail-head {
+.detail-head,
+.detail-copy,
+.contact-card {
   display: grid;
   gap: 0.9rem;
 }
@@ -256,15 +275,11 @@
 
 .detail-copy h2,
 .contact-card__heading h2,
-.form-stack h2 {
+.form-stack h2,
+.modal-title {
   margin: 0;
   font-size: 0.96rem;
   line-height: 1.25;
-}
-
-.detail-copy {
-  display: grid;
-  gap: 0.45rem;
 }
 
 .detail-copy p {
@@ -272,22 +287,10 @@
   line-height: 1.55;
 }
 
-.detail-meta__item {
-  font-size: 0.82rem;
+.detail-meta__item,
+.contact-card > p:not(.contact-card__eyebrow) {
+  font-size: 0.88rem;
   color: var(--color-black-2);
-}
-
-.contact-card {
-  display: grid;
-  gap: 0.8rem;
-}
-
-.contact-card__heading {
-  margin-bottom: 0.05rem;
-}
-
-.contact-card__heading h2 {
-  font-size: 0.95rem;
 }
 
 .contact-card__eyebrow {
@@ -296,13 +299,6 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-}
-
-.contact-card > p:not(.contact-card__eyebrow) {
-  margin: 0;
-  font-size: 0.88rem;
-  line-height: 1.45;
-  color: var(--color-black-2);
 }
 
 .detail-note {
@@ -320,90 +316,50 @@
   font-size: 0.8rem;
 }
 
-.has-modal::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(17, 24, 39, 0.7);
-  z-index: 20;
+/* CONTACT PAGE Тусдаа contact card */
+.contact-page {
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 12rem);
 }
 
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 30;
-  width: min(calc(100% - 2rem), 22rem);
-  transform: translate(-50%, -50%);
-  padding: 0.95rem;
-  border-radius: var(--radius-2);
+.modal-card {
+  width: min(100%, 23rem);
 }
 
-.modal__header {
-  display: flex;
+.modal-header {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-row {
   align-items: flex-start;
-  justify-content: space-between;
-  gap: 0.65rem;
-  margin-bottom: 0.8rem;
-}
-
-.modal__header h2 {
-  margin: 0;
-  font-size: 0.96rem;
-  line-height: 1.25;
-}
-
-.modal__subtitle {
-  margin: 0.2rem 0 0;
-  font-size: 0.8rem;
-  line-height: 1.4;
-  color: var(--color-black-3);
-}
-
-.modal__close {
-  flex: none;
-  font-size: 1.05rem;
-  line-height: 1;
-  color: var(--color-black-3);
-}
-
-.contact-stack {
-  display: grid;
-  gap: 0.7rem;
-}
-
-.contact-stack > div {
-  display: grid;
-  gap: 0.18rem;
-  padding: 0.7rem 0.75rem;
+  padding: 0.7rem 0.8rem;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-1);
   background-color: var(--color-white-1);
 }
 
-.contact-stack strong {
-  display: block;
-  margin: 0;
-  font-size: 0.74rem;
-  line-height: 1.25;
+.contact-row strong {
+  min-width: 4.2rem;
+  font-size: 0.78rem;
   color: var(--color-black-2);
 }
 
-.contact-stack p {
-  margin: 0;
-  font-size: 0.86rem;
+.contact-row span {
+  font-size: 0.88rem;
   line-height: 1.4;
   color: var(--color-black-1);
   word-break: break-word;
 }
 
-.modal .btn-solid {
-  width: 100%;
-  margin-top: 0.9rem;
-  min-height: 2.5rem;
-  font-size: 0.84rem;
-}
-
+/* REPORT PAGE Toggle form */
 .form-page {
   width: min(90%, 34rem);
   margin: 0 auto;
@@ -475,11 +431,11 @@
   place-items: center;
   gap: 0.4rem;
   min-height: 8.8rem;
+  padding: 1rem;
   border: 2px dashed var(--color-line);
   border-radius: var(--radius-2);
   color: var(--color-black-3);
   text-align: center;
-  padding: 1rem;
 }
 
 .upload-box strong {
@@ -531,10 +487,6 @@
     width: min(92%, 40rem);
   }
 
-  .page-split {
-    gap: 1rem;
-  }
-
   .list-heading {
     flex-direction: column;
     align-items: flex-start;
@@ -548,30 +500,34 @@
   .item-grid,
   .contact-card__actions,
   .card-actions,
-  .form-grid {
+  .form-grid,
+  .modal-actions {
     grid-template-columns: 1fr;
   }
 
   .form-card,
   .sidebar-card,
   .contact-card,
-  .modal {
+  .modal-card {
     padding: 0.95rem;
-  }
-
-  .modal {
-    width: min(calc(100% - 1rem), 21rem);
   }
 
   .list-heading h1,
   .detail-title,
-  .form-page h1 {
+  .form-page h1,
+  .modal-title {
     font-size: 1.25rem;
   }
 
   .detail-copy p,
   .contact-card > p:not(.contact-card__eyebrow),
-  .contact-stack p {
+  .contact-row span,
+  .modal-copy {
     font-size: 0.84rem;
   }
+}
+
+
+.list-heading--found > div > span {
+  color: #5f8f72;
 }

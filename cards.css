@@ -1,3 +1,4 @@
+/* RECENT ITEMS Home болон profile дээр ашиглах card style */
 .ri {
   margin-bottom: var(--space-5);
 }
@@ -14,6 +15,7 @@
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
+/* CARD Нийтлэг item card */
 .card {
   display: flex;
   flex-direction: column;
@@ -79,6 +81,7 @@
   color: var(--color-black-3);
 }
 
+/* META Байршил, хугацааны мөр */
 .meta {
   display: grid;
   gap: 0.35rem;
@@ -98,6 +101,7 @@
   stroke: var(--color-black-3);
 }
 
+/* ACTION BUTTONS Card доторх товчнууд */
 .actions {
   display: grid;
   grid-template-columns: 1fr 1fr;

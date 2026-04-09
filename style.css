@@ -1,5 +1,4 @@
-@import url("homepage-base.css");
-
+/* SHARED UTILITIES Homepage-оос бусад хуудсанд ашиглах нийтлэг style */
 * {
   box-sizing: border-box;
 }
@@ -27,16 +26,36 @@ button {
   cursor: pointer;
 }
 
+/* ХУУДАСНЫ ӨРГӨН Нийтлэг content width */
 .site-main,
-.page-width {
+.page-width,
+.profile-page,
+.auth-page,
+.admin-page {
   width: min(90%, 1200px);
   margin-inline: auto;
 }
 
-.site-main {
+.site-main,
+.profile-page,
+.auth-page,
+.admin-page {
   padding: 1.8rem 0 5rem;
+  animation: pageFade 0.28s ease;
 }
 
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(0.45rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ЦАГААН CARD Нийтлэг card surface */
 .surface {
   background-color: var(--color-white-0);
   border: 1px solid var(--color-line);
@@ -44,6 +63,7 @@ button {
   box-shadow: 0 0.5rem 1.5rem var(--color-shadow);
 }
 
+/* FORM ELEMENT Input, select, textarea */
 input,
 select,
 textarea {
@@ -87,6 +107,20 @@ select {
   background-repeat: no-repeat;
 }
 
+/* NAV SEARCH Доторх input-ийг homepage style-тэй ижил байлгах */
+.nav-search input {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  min-width: 0;
+}
+
+.nav-search input:focus {
+  border-color: transparent;
+}
+
+/* BUTTONS Нийтлэг товчнууд */
 .btn-solid,
 .btn-outline,
 .btn-soft {
@@ -94,7 +128,7 @@ select {
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  min-height: 2.7rem;
+  min-height: 2.65rem;
   padding: 0 1rem;
   border-radius: var(--radius-1);
   font-size: 0.82rem;
@@ -132,6 +166,7 @@ select {
   color: var(--color-black-2);
 }
 
+/* STATUS BADGE Lost / Found төлөв */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -154,20 +189,10 @@ select {
 }
 
 @media (max-width: 768px) {
-  .site-main {
+  .site-main,
+  .profile-page,
+  .auth-page,
+  .admin-page {
     padding-top: 1.2rem;
   }
-}
-
-
-.nav-search input {
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  min-width: 0;
-}
-
-.nav-search input:focus {
-  border-color: transparent;
 }
