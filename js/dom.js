@@ -62,7 +62,7 @@ export function renderSummary(container, summary) {
       <strong>${summary.found}</strong>
       <span>Found Posts</span>
     </article>
-    <article class="summary-card summary-wide">
+    <article class="summary-card">
       <strong>${summary.locations}</strong>
       <span>Active Locations</span>
     </article>

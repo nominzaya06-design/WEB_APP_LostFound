@@ -37,7 +37,7 @@ export class LostFoundItem {
   }
 
   getRelativeTime() {
-    const today = new Date('2026-04-09T00:00:00');
+    const today = new Date();
     const postedDate = new Date(this.date);
     const diffTime = Math.max(today - postedDate, 0);
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
